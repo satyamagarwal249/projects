@@ -1,0 +1,133 @@
+from urllib.request import urlopen
+
+
+from bs4 import BeautifulSoup ,re
+
+course=input(" enter course you want to search")
+'''
+html = urlopen("https://www.futurelearn.com/search?q="+course)
+'''
+print(course)
+
+html = urlopen("https://www.futurelearn.com/search?q="+course)
+#print(course)
+b=BeautifulSoup(html,'html.parser')
+
+#print(b.prettify)
+col=b.findAll("",{"class":"headline headline-primary u-regular u-no-margin-top"})
+for i in col:
+   if(i.get_text().lower() == "course"):
+       print (i.get_text())
+       par=i.parent
+           
+       print ("course name=",par.find("h3").get_text())
+       
+       print ("course by=",par.find("a", recursive=False).get_text())
+       print ("course description=",par.find("p").get_text())
+       new="https://www.futurelearn.com"+par.find("h3").a['href']
+       print ("link foR MORE  details :",new)
+       newx=BeautifulSoup( urlopen(new),'html.parser')
+      
+       q1=newx.findAll("span",{"class":"a-item-title a-item-title--secondary a-item-title--light"},recursion= False)
+       q2=newx.findAll("span",{"class":"m-metadata__content"},recursion= False)
+       for i in range(0,len(q1)):
+           print (re.sub('\n+',"" ,q1[i].get_text()), ":", re.sub('\n+',"" ,q2[i].get_text()))
+           
+
+           
+           
+           
+           
+           
+
+  import pymysql.cursors
+
+# Open database connection
+db = pymysql.connect("localhost","root","","edufare" )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# execute SQL query using execute() method.
+cursor.execute("desc main")
+
+# Fetch a single row using fetchone() method.
+data = cursor.fetchone()
+print ("Database version : %s " % data)
+
+# disconnect from server
+db.close()
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+
+'''
+         coll=b.findAll("div",{"class":"m-metadata__item-text"},recursion= False)
+   
+       
+         for j in coll:
+            print (j.get_text(),j,"diufgsdif",j.previous_sibling)
+            print(j.parent)
+       #coll=b.findAll("span",{"class":"a-item-title a-item-title--secondary a-item-title--light"},recursion= False)
+       #print(coll)
+       
+       for ii in coll:
+           for j in ii.children:
+               print (j)
+           print( "\n\n")
+ 
+
+
+
+
+
+[<div class="a-content a-content--hall a-content--contiguous">
+<p class="old-text-typescale u-bold">Begin Programming: Build Your First Mobile Game</p>
+<div class="m-button-group m-button-group--horizontal">
+<form action="/courses/begin-programming/add-to-wishlist" class="button_to" data-prevent-double-submission="true" method="post" role="form"><input class="a-button a-button--boss" type="submit" value="Add to Wishlist"/><input name="authenticity_token" type="hidden" value="vWf+9KxLa+24GnY70HvYet72czg16moZVZ6jD/ULG/aen4fGqEWBR7i1Ibv46RoU9LqFy/UhBUwefmBWRZzrHA=="/></form>
+</div>
+</div>, <div class="a-content a-content--hall a-content--contiguous">
+
+
+
+
+<div class="m-metadata__item-text">
+<span class="a-item-title a-item-title--secondary a-item-title--light">
+Learn
+</span>
+<span class="m-metadata__content">
+Free
+</span>
+</div>
+ss="m-metadata__item-text">
+<span class="a-item-title a-item-title--secondary a-item-title--light">
+Upgrade
+</span>
+<span class="m-metadata__content">
+$74
+</span>
+
+
+
+
+
+
+
+Course
+<span class="headline headline-primary u-regular u-no-margin-top">Course</span>
+
+<h3><a class="js-ahoy-track" data-ahoy-event="$click" data-ahoy-event-properties='{"position":1,"query":"piano","path":"/courses/jazz-piano-improvisation","global_id":"gid://future-learn/Course/1513","click-event-name":"search_result_click"}' href="/courses/jazz-piano-improvisation">Learn Jazz Piano: II. Improvising on Jazz Standards</a></h3>
+
+<a href="/partners/goldsmiths-university-london">Goldsmiths, University of London </a>
+
+<p>Explore improvisation in jazz music and further develop your ability to improvise jazz piano.</p>
+
+
+'''

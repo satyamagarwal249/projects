@@ -1,0 +1,187 @@
+
+div.scroll {
+
+padding : 1ex;
+margin : 0 0 30px 5px;
+border : 1px solid #345411;
+background : #BCE0A8;
+color : #000;
+}
+
+/* Style the header */
+.header {
+    background-color:rgb(150, 210,160);
+    padding: 5px;
+    text-align: center;
+	height:115px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background : #4b692d;
+	
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.topnav-right {
+  float: right;
+ background-color: #4CAF90;
+ border-radius: 45%;
+ 
+}
+/* Style the topnav links */
+.topnav a {
+
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	  font-size: 20px;
+	  
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: orange	;
+    color: black;
+}
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Create three equal columns that floats next to each other */
+.clm{
+height:420px;
+}
+.clm.column1{
+    float: left;
+    width: 65%;
+    padding: 10px 50px 15px 50px;
+	
+border-right : 1px solid #b2d094;
+	
+}
+.clm.column2{
+
+
+
+
+    float: left;
+    width: 35%;
+    padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+#footer {
+margin : 0px 0 0 0;
+padding : 4px;
+font :  "Trebuchet MS", verdana, arial, sans-serif;
+font-size:12px;
+background : #4b692d;
+color : #fff;
+}
+body {
+margin : 0;
+padding : 5px 0px;
+text-align : left;
+font : 90% "Trebuchet MS", verdana, arial, sans-serif;
+line-height : 1em;
+background : #BCE0A8;
+color : #000;
+
+}
+#wrapper 
+{
+width : 1300px;
+margin-right : auto;
+margin-left : auto;
+padding : 0;
+border : 0px solid green;
+background : #fff ;
+ font-family: Kaushan Script;
+}
+table{
+text-align:left;
+font-size:14px;
+}
+#data{
+width:1200px;
+text-align:center;
+font-size:21px;
+font-weight: bold ;
+color: blue;
+}
+#myTable{
+width:1200px;
+text-align:center;
+font-size:21px;
+font-weight: bold ;
+color: blue;
+}
+
+
+th{
+text-align:center;
+color:red;
+}
+#id1{
+text-align:right;
+color:red;}
+#my
+{
+font-size:25px;
+font-style:algerian;
+color:#003300;
+}
+#master
+{
+
+text-align:right;
+font-weight:bold;
+font-size:20px;
+font-family: algerian;
+color:red;
+}
+
+
+#normal
+{
+
+text-align:justify;
+
+font-size:20px;  
+ 
+	line-height: 119%;
+color:black;
+}
+br
+{
+line-height: 105%;
+}
+#mid
+{ float:middle;
+    text-align: left;
+}
+a
+{
+color:green;
+}

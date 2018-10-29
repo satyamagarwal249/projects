@@ -1,0 +1,43 @@
+<button onclick="window.history.back();">Go Back</button>
+
+
+<script src="jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+$q="SELECT * FROM member";
+	 $r=mysqli_query($con,$q);
+				
+while ($row=mysqli_fetch_array($r))
+		
+
+onclick="return confirm('are you sure to edit details')"  
+
+	  $start=str_ireplace("/","-", $row['start']);
+	  $end=str_ireplace("/","-", $row['end']);
+
+
+$num_rows = mysqli_num_rows($result);
+
+$ret=$row['issuedate'];
+$return=date_create($ret);
+
+date_modify($return,'+5 day');
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="/action_page.php">
+  Username: <input type="text" name="usrname" maxlength="10"><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+
+
+
+<button onclick="window.location.href='/page2'">Continue</button>
